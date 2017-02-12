@@ -1,0 +1,41 @@
+<dataSource name="MySQL - sshdemo@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="sshdemo">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="appfuse" />
+    <schema id="3" name="db-mcms-open" />
+    <schema id="4" name="demo" />
+    <schema id="5" name="information_schema" />
+    <schema id="6" name="micro_doctor" />
+    <schema id="7" name="myproject" />
+    <schema id="8" name="mysql" />
+    <schema id="9" name="order" />
+    <schema id="10" name="performance_schema" />
+    <schema id="11" name="shopping" />
+    <schema id="12" name="struts2hibernate" />
+    <schema id="13" name="tutorial_hibernate" />
+    <schema id="14" name="tutorial_service" />
+    <schema id="15" name="tutorial_spring" />
+    <schema id="16" name="user_system" />
+    <table id="17" parent="1" name="users" />
+    <column id="18" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="19" parent="17" name="account">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="20" parent="17" name="name">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="21" parent="17" name="password">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <key id="22" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

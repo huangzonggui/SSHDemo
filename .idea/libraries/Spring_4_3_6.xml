@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="Spring-4.3.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-aop-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-aspects-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-beans-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-context-support-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-core-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-expression-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-instrument-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-instrument-tomcat-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-jdbc-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-jms-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-messaging-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-orm-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-oxm-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-test-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-tx-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/other/com.springsource.org.aopalliance-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/other/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/other/com.springsource.org.apache.log4j-1.2.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE/other/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/Spring-4.3.6.RELEASE" recursive="false" />
+  </library>
+</component>

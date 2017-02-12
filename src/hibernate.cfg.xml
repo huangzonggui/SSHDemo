@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/sshdemo</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- 配置数据库的方言
+            比如在mysql里面有关键字  limit ，只能使用在mysql里面
+            让hibernate识别到不同数据库自己特有的语句   -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 配置hibernate的相关信息 -->
+        <!-- 是否显示底层的sql语句 -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- 是否格式化sql语句 -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- hibernate会帮自己创建数据库表，默认不会创建，需要配置
+            值 update： 如果数据库里面不存在表，创建；如果已经存在，更新    -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="com.entity.UsersEntity"/>
+        <mapping resource="com/entity/UsersEntity.hbm.xml"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
