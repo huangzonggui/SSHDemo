@@ -1,6 +1,6 @@
 package com.test;
 
-import com.biz.IUserBiz;
+import com.service.IUserService;
 import com.entity.UsersEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class UserTest {
 
 	@Autowired
-	IUserBiz service;
+    IUserService service;
 	@Test
 	public void testLogin() {
 		System.out.println("service:"+service);

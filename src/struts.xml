@@ -8,10 +8,12 @@
     <constant name="struts.configuration.xml.reload" value="true"></constant>
 
     <package name="default" extends="struts-default" namespace="/">
-        <action name="doLogin" class="umAction">
+        <action name="doLogin" class="umAction" method="login">
             <result name="error">error.jsp</result>
             <result name="success">success.jsp</result>
         </action>
+        <action name="doRegister" class="umAction" method="add"></action>
+
     </package>
     <constant name="struts.i18n.encoding" value="GBK"/>
 

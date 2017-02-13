@@ -12,8 +12,11 @@
 	http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
-    <!-- 自动扫描Spring注解配置,扫描com.zhuolang包下的所有注释类 -->
+    <!-- 自动扫描Spring注解配置,扫描com包下的所有注释类
+        context:component-scan ： 可以扫描到类上面和属性上面的和方法上面的注解
+		context:annotation-config： 可以扫描只是属性上面的注解-->
     <context:component-scan base-package="com"/>
+    <!--<context:annotation-config></context:annotation-config>-->
     <!-- 引入属性文件 -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
@@ -39,7 +42,8 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
-                <prop key="hibernate.current_session_context_class">thread</prop>
+                <!--整合spring不配置，使用SpringSessionContext，配置就使用ThreadLocalSessionContext-->
+                <!--<prop key="hibernate.current_session_context_class">thread</prop>-->
             </props>
         </property>
 
@@ -50,26 +54,47 @@
         </property>
     </bean>
 
-    <!--配置事务-->
+    <!--1.配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <!--开启事务-->
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!--2.配置事务增强-->
+    <tx:advice id="txadvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!--设置事务操作的方法匹配规则-->
+            <tx:method name="login" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="add" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="find" propagation="REQUIRED" rollback-for="Exception"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--3.配置切面-->
+    <aop:config>
+        <!--切入点-->
+        <!--其中第一个*代表返回值(public等)，第二*代表dao下子包，第三个*代表方法名，“（..）”代表方法参数。-->
+        <aop:pointcut id="mypointcut" expression="execution(* com.service.impl.*.*(..))"/>
+        <!--配置切面-->
+        <aop:advisor advice-ref="txadvice" pointcut-ref="mypointcut"/>
+    </aop:config>
+
 
     <bean id="userDAOImpl" class="com.dao.impl.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
         <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
 
-    <bean id="userBiz" class="com.biz.UserBiz">
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="userBiz" class="com.service.impl.UserService">
         <property name="userDAO" ref="userDAOImpl"/>
     </bean>
     <bean id="umAction" class="com.action.UserManagerAction" scope="prototype">
         <property name="userBiz" ref="userBiz"/>
     </bean>
 
-    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
-        <property name="sessionFactory" ref="sessionFactory"></property>
-    </bean>
+
 </beans>

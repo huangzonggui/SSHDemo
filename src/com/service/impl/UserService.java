@@ -1,8 +1,9 @@
-package com.biz;
+package com.service.impl;
 
 import com.dao.IUserDAO;
 import com.dao.impl.UserDaoImpl;
 import com.entity.UsersEntity;
+import com.service.IUserService;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -10,8 +11,8 @@ import java.util.List;
 /**
  * Created by hzg on 2017/2/11.
  */
-@Transactional
-public class UserBiz implements IUserBiz {
+//@Transactional
+public class UserService implements IUserService {
 
     private IUserDAO userDAO;
 
